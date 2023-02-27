@@ -8,7 +8,9 @@
 
 // Dependences
 const http = require("http");
-const chalk = require('chalk')
+const chalk = require('chalk');
+const {handelReqRes} = require('./helpers/handelReqRes');
+
 
 // App object -  Module Scaffolding
 const app = {};
@@ -27,12 +29,7 @@ app.createServer = () => {
 }
 
 // Handel request response 
-app.handelRequest = (req, res) => {
-     res.write("hello bangla");
-     res.write("hello khan");
-     res.end();
-     
-}
+app.handelRequest = handelReqRes;
 
 // Start the server
 app.createServer();
